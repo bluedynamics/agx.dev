@@ -7,6 +7,7 @@ import sys, os
 version = 'dev'
 shortdesc = 'AGX development Bundle.'
 longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
+longdesc += open(os.path.join(os.path.dirname(__file__), 'LICENSE.rst')).read()
 
 setup(name='agx.dev',
       version=version,

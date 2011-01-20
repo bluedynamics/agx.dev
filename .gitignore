@@ -3,7 +3,10 @@
 .mr.developer.cfg
 .project
 .pydevproject
+.installed.cfg
 bin
 devsrc
 eggs
 parts
+develop-eggs
+src/agx.dev.egg-info
