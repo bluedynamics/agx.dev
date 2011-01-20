@@ -1,0 +1,9 @@
+*.pyc
+*.pyo
+.mr.developer.cfg
+.project
+.pydevproject
+bin
+devsrc
+eggs
+parts
