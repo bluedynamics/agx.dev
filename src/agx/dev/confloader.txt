@@ -1,0 +1,11 @@
+
+Configuration loader
+====================
+
+Check if configuration loader was registered properly.
+
+  >>> from zope.component import getUtility
+  >>> from agx.core.interfaces import IConfLoader
+  >>> loader = getUtility(IConfLoader)
+  >>> loader
+  <agx.flavour.dev.confloader.ConfLoader object at ...>
