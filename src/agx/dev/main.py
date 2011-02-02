@@ -3,7 +3,7 @@
 
 from zope.configuration.xmlconfig import XMLConfig
 import agx.core.main
-import agx.flavour.dev
+import agx.dev
 
 def run():
     """
@@ -11,5 +11,5 @@ def run():
     -p dev/agx.transform.xmi2uml/referencemodels/pyegg.profile.uml 
     -o /opt/agxtest/
     """
-    XMLConfig('configure.zcml', agx.flavour.dev)()
+    XMLConfig('configure.zcml', agx.dev)()
     agx.core.main.run()

@@ -40,7 +40,7 @@ setup(name='agx.dev',
       ),
       entry_points={
           'console_scripts': [
-              'agx = agx.flavour.dev.main:run',
+              'agx = agx.dev.main:run',
           ],
       },
       )
