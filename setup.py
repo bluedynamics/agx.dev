@@ -31,9 +31,8 @@ setup(name='agx.dev',
       install_requires=[
           'setuptools',
           'agx.generator.uml',
-          'agx.generator.zca',
-          'agx.generator.buildout',
           'agx.generator.dexterity',
+          #'agx.generator.buildout',
       ],
       extras_require = dict(
           test=[
