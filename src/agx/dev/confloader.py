@@ -24,7 +24,9 @@ class ConfLoader(object):
     @property
     def profiles(self):
         ret = list()
-        for module in [agx.generator.pyegg, agx.generator.zca]:
+        for module in [agx.generator.pyegg,
+                       agx.generator.zca,
+                       agx.generator.gs]:
             for profile in self._profiles(module):
                 ret.append(profile)
         return ret
