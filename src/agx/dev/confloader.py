@@ -10,6 +10,7 @@ import agx.generator.pyegg
 import agx.generator.zca
 import agx.generator.plone
 import agx.generator.dexterity
+import agx.generator.buildout
 
 class ConfLoader(object):
     
@@ -28,7 +29,8 @@ class ConfLoader(object):
         for module in [agx.generator.pyegg,
                        agx.generator.zca,
                        agx.generator.plone,
-                       agx.generator.dexterity]:
+                       agx.generator.dexterity,
+                       agx.generator.buildout]:
             for profile in self._profiles(module):
                 ret.append(profile)
         return ret
@@ -52,3 +54,4 @@ class ConfLoader(object):
         XMLConfig('configure.zcml', agx.generator.zca)()
         XMLConfig('configure.zcml', agx.generator.plone)()
         XMLConfig('configure.zcml', agx.generator.dexterity)()
+        XMLConfig('configure.zcml', agx.generator.buildout)()
