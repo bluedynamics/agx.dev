@@ -8,6 +8,7 @@ from agx.core.interfaces import IConfLoader
 import agx.generator.uml
 import agx.generator.pyegg
 import agx.generator.zca
+import agx.generator.sql
 import agx.generator.plone
 import agx.generator.dexterity
 import agx.generator.buildout
@@ -28,6 +29,7 @@ class ConfLoader(object):
         ret = list()
         for module in [agx.generator.pyegg,
                        agx.generator.zca,
+                       agx.generator.sql,
                        agx.generator.plone,
                        agx.generator.dexterity,
                        agx.generator.buildout]:
@@ -52,6 +54,7 @@ class ConfLoader(object):
         XMLConfig('configure.zcml', agx.generator.uml)()
         XMLConfig('configure.zcml', agx.generator.pyegg)()
         XMLConfig('configure.zcml', agx.generator.zca)()
+        XMLConfig('configure.zcml', agx.generator.sql)()
         XMLConfig('configure.zcml', agx.generator.plone)()
         XMLConfig('configure.zcml', agx.generator.dexterity)()
         XMLConfig('configure.zcml', agx.generator.buildout)()

@@ -32,6 +32,7 @@ setup(name='agx.dev',
           'setuptools',
           'agx.generator.uml',
           'agx.generator.dexterity',
+          'agx.generator.sql'
           #'agx.generator.buildout',
       ],
       extras_require = dict(
