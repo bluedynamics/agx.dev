@@ -1,8 +1,6 @@
-# Copyright 2003-2009, BlueDynamics Alliance - http://bluedynamics.com
-# GNU General Public License Version 2
-
 import os
-from zope.interface import implements
+import subprocess
+from zope.interface import implementer
 from zope.configuration.xmlconfig import XMLConfig
 from agx.core.interfaces import IConfLoader
 import agx.generator.uml
@@ -13,27 +11,46 @@ import agx.generator.plone
 import agx.generator.dexterity
 import agx.generator.buildout
 
+
+@implementer(IConfLoader)
 class ConfLoader(object):
-    
-    implements(IConfLoader)
-    
     flavour = 'Develop'
     
     transforms = [
         'xmi2uml',
-        'uml2fs',
-    ]
+        'uml2fs']
+    
+    _generators = [
+        agx.generator.uml,
+        agx.generator.pyegg,
+        agx.generator.zca,
+        agx.generator.sql,
+        agx.generator.plone,
+        agx.generator.dexterity,
+        agx.generator.buildout]
+    
+    @property
+    def generators(self):
+        ret = list()
+        cmd = 'git rev-parse --verify HEAD'
+        for generator in self._generators:
+            directory = os.path.split(generator.__file__)
+            while directory[1] != 'src':
+                directory = os.path.split(directory[0])
+            os.chdir(directory[0])
+            p = subprocess.Popen(
+                cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE, close_fds=True)
+            output = p.stdout.readlines()
+            version = output[0].strip('\n')
+            ret.append((generator.__name__, version))
+        return ret
     
     @property
     def profiles(self):
         ret = list()
-        for module in [agx.generator.pyegg,
-                       agx.generator.zca,
-                       agx.generator.sql,
-                       agx.generator.plone,
-                       agx.generator.dexterity,
-                       agx.generator.buildout]:
-            for profile in self._profiles(module):
+        for generator in self._generators:
+            for profile in self._profiles(generator):
                 ret.append(profile)
         return ret
     
@@ -51,10 +68,5 @@ class ConfLoader(object):
         return ret
     
     def __call__(self):
-        XMLConfig('configure.zcml', agx.generator.uml)()
-        XMLConfig('configure.zcml', agx.generator.pyegg)()
-        XMLConfig('configure.zcml', agx.generator.zca)()
-        XMLConfig('configure.zcml', agx.generator.sql)()
-        XMLConfig('configure.zcml', agx.generator.plone)()
-        XMLConfig('configure.zcml', agx.generator.dexterity)()
-        XMLConfig('configure.zcml', agx.generator.buildout)()
+        for generator in self._generators:
+            XMLConfig('configure.zcml', generator)()
