@@ -10,6 +10,7 @@ import agx.generator.sql
 import agx.generator.plone
 import agx.generator.dexterity
 import agx.generator.buildout
+import agx.generator.generator
 
 
 @implementer(IConfLoader)
@@ -27,7 +28,8 @@ class ConfLoader(object):
         agx.generator.sql,
         agx.generator.plone,
         agx.generator.dexterity,
-        agx.generator.buildout]
+        agx.generator.buildout,
+        agx.generator.generator]
     
     @property
     def generators(self):
