@@ -1,5 +1,5 @@
-python2.6 --version
+python --version
 virtualenv env
-python bootstrap.py -c dev.cfg
-bin/buildout -c dev.cfg
+env/bin/python bootstrap.py
+bin/buildout
 ./test.sh
