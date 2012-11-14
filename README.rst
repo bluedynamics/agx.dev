@@ -12,6 +12,27 @@ and code for wiring the several available generators together
 Full documentation is available `here <http://agx.me>`_.
 
 
+Install
+=======
+
+To install AGX for using the generator and possibly for development,
+follow the steps from ci.sh, a script we use for continuous integration testing.
+
+.. include:: ci.sh
+   ::literal:
+
+
+Run Tests
+=========
+
+You can run tests for a single package, e.g.:
+
+    bin/test agx.generator.pyegg
+
+Or test them all:
+
+   ./test.sh
+
 Changes
 =======
 
