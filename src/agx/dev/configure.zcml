@@ -1,8 +1,0 @@
-<configure xmlns="http://namespaces.zope.org/zope">
-
-  <include package="zope.component" file="meta.zcml" />
-  
-  <!-- configuration loader utility for flavour. -->
-  <utility factory=".confloader.ConfLoader" />
-  
-</configure>

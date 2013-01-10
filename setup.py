@@ -1,22 +1,26 @@
 # Copyright 2003-2009, BlueDynamics Alliance - http://bluedynamics.com
 # GNU General Public License Version 2
+import os
+from setuptools import (
+    setup,
+    find_packages,
+)
 
-from setuptools import setup, find_packages
-import sys, os
 
 version = 'dev'
 shortdesc = 'AGX development Bundle.'
 longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 longdesc += open(os.path.join(os.path.dirname(__file__), 'LICENSE.rst')).read()
 
+
 setup(name='agx.dev',
       version=version,
       description=shortdesc,
       long_description=longdesc,
       classifiers=[
-            'License :: OSI Approved :: GNU General Public License (GPL)',
-            'Operating System :: OS Independent',
-            'Programming Language :: Python', 
+          'License :: OSI Approved :: GNU General Public License (GPL)',
+          'Operating System :: OS Independent',
+          'Programming Language :: Python', 
       ],
       keywords='AGX, Code Generator',
       author='BlueDynamics Alliance',
@@ -24,7 +28,7 @@ setup(name='agx.dev',
       url=u'https://github.com/bluedynamics/agx.dev',
       license='GNU General Public Licence',
       packages=find_packages('src'),
-      package_dir = {'': 'src'},
+      package_dir={'': 'src'},
       namespace_packages=['agx'],
       include_package_data=True,
       zip_safe=False,
@@ -44,5 +48,4 @@ setup(name='agx.dev',
           'console_scripts': [
               'agx = agx.dev.main:run',
           ],
-      },
-      )
+      })
