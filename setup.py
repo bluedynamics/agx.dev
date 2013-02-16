@@ -37,6 +37,7 @@ setup(name='agx.dev',
           'agx.generator.uml',
           'agx.generator.dexterity',
           'agx.generator.sql',
+          'agx.generator.cornice',
           'agx.generator.generator',
       ],
       extras_require = dict(
