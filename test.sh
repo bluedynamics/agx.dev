@@ -40,6 +40,6 @@ echo "-------------------- bin/test agx.generator.dexterity -----"
 bin/test agx.generator.dexterity
 echo "-------------------- bin/test agx.generator.buildout ------"
 bin/test agx.generator.buildout
-echo "-------------------- bin/test agx.generator.cornice -------"
-bin/test agx.generator.cornice
+#echo "-------------------- bin/test agx.generator.cornice -------"
+#bin/test agx.generator.cornice
 echo "==================== ran all the tests ===================="
