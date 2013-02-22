@@ -4,32 +4,44 @@ agx.dev
 
 This is the installation and development buildout for AGX.
 
-This package includes the source checkouts of AGX related packages
-(in devsrc/ after having run buildout)
-and code for wiring the several available generators together
-(see src/agx/dev/confloader.py).
+This packages includes buildout configurations to use AGX for development, and
+to develop AGX itself.
 
 Full documentation is available `here <http://agx.me>`_.
 
 
-Install
-=======
+Install for using AGX
+---------------------
 
-To install AGX for using the generator and possibly for development,
-follow the steps from ci.sh, a script we use for continuous integration testing.
+Run bootstrap.py::
 
-.. include:: ci.sh
-   ::literal:
+    python bootstrap.py -o 1.7
+
+And buildout::
+
+    ./bin/buildout
+
+
+Install for developing AGX
+--------------------------
+
+Run bootstrap.py::
+
+    python bootstrap.py -o 1.7 -c dev.cfg
+
+And buildout::
+
+    ./bin/buildout -c dev.cfg
 
 
 Run Tests
-=========
+---------
 
-You can run tests for a single package, e.g.:
+You can run tests for a single package, e.g.::
 
     bin/test agx.generator.pyegg
 
-Or test them all:
+Or test them all::
 
    ./test.sh
 
@@ -37,7 +49,7 @@ Or test them all:
 Changes
 =======
 
-1.0 (svn)
----------
+1.0a1
+-----
 
-  - Initial
+- Initial Release

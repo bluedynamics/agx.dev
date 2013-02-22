@@ -1,5 +1,3 @@
-# Copyright 2003-2009, BlueDynamics Alliance - http://bluedynamics.com
-# GNU General Public License Version 2
 import os
 from setuptools import (
     setup,
@@ -7,8 +5,8 @@ from setuptools import (
 )
 
 
-version = 'dev'
-shortdesc = 'AGX development Bundle.'
+version = '1.0a1'
+shortdesc = 'AGX development bundle'
 longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 longdesc += open(os.path.join(os.path.dirname(__file__), 'LICENSE.rst')).read()
 
@@ -18,9 +16,9 @@ setup(name='agx.dev',
       description=shortdesc,
       long_description=longdesc,
       classifiers=[
+          'Development Status :: 3 - Alpha',
           'License :: OSI Approved :: GNU General Public License (GPL)',
-          'Operating System :: OS Independent',
-          'Programming Language :: Python', 
+          'Programming Language :: Python',
       ],
       keywords='AGX, Code Generator',
       author='BlueDynamics Alliance',

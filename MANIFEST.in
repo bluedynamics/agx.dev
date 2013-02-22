@@ -1,3 +1,7 @@
 include *.rst
+include *.cfg
+include *.sh
+include bootstrap.py
 recursive-include src *
 recursive-exclude src *.pyc *.pyo
+recursive-include etc *
