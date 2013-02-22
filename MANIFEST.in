@@ -1,7 +1,12 @@
 include *.rst
-include *.cfg
-include *.sh
+include buildout.cfg
+include dev.cfg
+include test.sh
 include bootstrap.py
+exclude .installed.cfg
+exclude .mr.developer.cfg
+exclude ci.sh
+exclude sandbox.cfg
 recursive-include src *
 recursive-exclude src *.pyc *.pyo
 recursive-include etc *
