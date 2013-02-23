@@ -15,7 +15,7 @@ Install for using AGX
 
 Run bootstrap.py::
 
-    python bootstrap.py -o 1.7
+    python bootstrap.py --version 1.7
 
 And buildout::
 
@@ -27,7 +27,7 @@ Install for developing AGX
 
 Run bootstrap.py::
 
-    python bootstrap.py -o 1.7 -c dev.cfg
+    python bootstrap.py --version 1.7 -c dev.cfg
 
 And buildout::
 
