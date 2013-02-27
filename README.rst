@@ -46,6 +46,15 @@ Or test them all::
    ./test.sh
 
 
+Issues and Feedback
+-------------------
+
+For reporting issues, please use tracker at
+``https://github.com/bluedynamics/agx.core/issues``.
+
+For direct feedback or questions send an email to ``dev@agx.me``.
+
+
 Changes
 =======
 
