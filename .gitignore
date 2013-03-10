@@ -13,3 +13,4 @@ src/agx.dev.egg-info
 .settings/
 agx.core.log
 dist/
+coverage-reports/
